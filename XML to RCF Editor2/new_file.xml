@@ -1,0 +1,47 @@
+<parent active="yes">
+    <rule id="Rule-11.1" help="m3cm-5.6.0-rule_help-en_US/rules/Rule-11.1.html" active="no">
+       <text>Conversions shall not be performed between a pointer to a function and any other type</text>
+       <categories>
+        <category>MISRA Required Rules</category>
+        <category>Required</category>
+        <category>Rules</category>
+        <category>Pointer type conversions</category>
+       </categories>
+       <enforcement>
+        <message component="qac" id="0302" mapped="no" />
+        <message component="qac" id="0305" mapped="yes" />
+        <message component="qac" id="0307" mapped="yes" />
+        <message component="qac" id="0313" mapped="no" />
+       <message component="qac" id="1122" mapped="yes" />
+        </enforcement>
+    </rule>
+    <rule id="Rule-11.2" help="m3cm-5.6.0-rule_help-en_US/rules/Rule-11.2.html" active="no">
+       <text>Conversions shall not be performed between a pointer to an incomplete type and any other type</text>
+       <categories>
+        <category>MISRA Required Rules</category>
+        <category>Required</category>
+        <category>Rules</category>
+        <category>Pointer type conversions</category>
+       </categories>
+       <enforcement>
+        <message component="qac" id="0308" mapped="no" />
+        <message component="qac" id="0323" mapped="no" />
+        <message component="qac" id="0324" mapped="no" />
+        <message component="qac" id="0325" mapped="no" />
+       </enforcement>
+    </rule>
+    <rule id="Rule-11.3" help="m3cm-5.6.0-rule_help-en_US/rules/Rule-11.3.html" active="no">
+       <text>A conversion shall not be performed between a pointer to object type and a pointer to a different object type</text>
+       <categories>
+        <category>MISRA Required Rules</category>
+        <category>Required</category>
+        <category>Rules</category>
+        <category>Pointer type conversions</category>
+       </categories>
+       <enforcement>
+        <message component="qac" id="0310" mapped="yes" />
+        <message component="qac" id="3305" mapped="no" />
+       <message component="qac" id="0315" mapped="yes" />
+        </enforcement>
+    </rule>
+</parent>
