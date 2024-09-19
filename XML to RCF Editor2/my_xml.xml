@@ -9,8 +9,8 @@
        </categories>
        <enforcement>
         <message component="qac" id="0302" mapped="no"/>
-        <message component="qac" id="0305" mapped="yes"/>
-        <message component="qac" id="0307" mapped="yes"/>
+        <message component="qac" id="0305" mapped="no"/>
+        <message component="qac" id="0307" mapped="no"/>
         <message component="qac" id="0313" mapped="no"/>
        </enforcement>
     </rule>
