@@ -2,7 +2,7 @@
 
 ## Description
 
-This Python script processes an XML file based on modifications specified in a JSON file. It generates two output files: `.rcf` (with updates) and `.xml` (for testing purposes).
+This Python script processes an XML file based on modifications specified in a JSON file then generates .rcf file with the modifications 
 
 ## Functions
 
@@ -30,7 +30,7 @@ This Python script processes an XML file based on modifications specified in a J
 
 ### `update_into_rcf(root, file_name_with_path)`
 
-- **Description**: Generates `.rcf` and `.xml` files with updates based on the JSON file. The `.xml` file generation is optional for testing.
+- **Description**: Generates `.rcf` file with updates based on the JSON file.
 
 ## Code Flow
 
@@ -49,9 +49,20 @@ This Python script processes an XML file based on modifications specified in a J
 4. **Generating Output Files**:
    - Calls `update_into_rcf` to generate `.rcf` and `.xml` files with modifications.
 
-## Sample Usage
+## Sample Scenarios:
 
 ### 1. Proper Inputs
 
 ```bash
 python app.py "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\my_xml.xml" "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\input.json" "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\new_file"
+output: .rcf file
+
+### 2. Incorrect file path for XML 
+python app.py "C:\Use\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\my_xml.xml" "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\input.json" "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\new_file"
+(use in first directory incorrect file path)
+output: File directory might be incorrect, or file content is not valid
+
+### 3. invalid json file syntax:
+python app.py "C:\Use\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\my_xml.xml" "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\corrupted.json" "C:\Users\ext.hassan.lotfy\PycharmProjects\File handling\Task1_xml_edit\new_file"
+(corrupted.json containing only text "this is corrupted file" and saved as .json)
+output: The file could not be parsed. It may be malformed or contain invalid json
