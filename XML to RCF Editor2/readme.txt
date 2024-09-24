@@ -175,13 +175,23 @@ This section includes how to install ansible after successfully installing wsl, 
 
 ### Ansible playbook
 
-- **Description**: playbook mainly consists of 3 tasks:
+- **Description**: playbook enable_converter_ci mainly consists of 3 tasks:
 	- running the python script for file converter
 	- checking if output file is generated successfully
 	- if file is generated, file is found will be printed, otherwise this task is skipped
+	playbook enable_converter_ci_role same as enable_converter_ci but third task calls a role to print the message
+
+- **print_the_message role**:
+1. create role using: ```ansible-galaxy init <role_name>```
+2. optional: if role couldn't be found when running main yml file, add its directory to ansible.cfg:
+	- locate ansible.cfg: ```cd ~``` > ``` find / -name "ansible.cfg" 2>/dev/null```
+	- add directory to ansible.cfg: under [defaults] roles_path var, type :<ansible directory> 
+
+
+
 
 - **How to run**:
-	- Open windows terminal > command: wsl ansible-playbook "yaml_file_path" (ex: /mnt/c/Users/ext.hassan.lotfy/PycharmProjects/whenblock.yml)
+	- Open windows terminal > command: wsl ansible-playbook "yaml_file_path" (ex: /mnt/c/Users/ext.hassan.lotfy/PycharmProjects/enable_converter_ci_role.yml)
 
 - **Output**:
 	- if the file path being checked in second task is the same as the generated file from the script (refer to sample1.png), output will be as in output1.png

@@ -1,0 +1,6 @@
+---
+# tasks file for print_message_role
+- name: Print input message
+  debug:
+    msg: "{{message}}"
+  when: message is defined

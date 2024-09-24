@@ -14,9 +14,10 @@
         path: "/mnt/c/Users/ext.hassan.lotfy/PycharmProjects/File handling/Task1_xml_edit/my_rcf.rcf"
       register: output_file_flag
 
-    - name: Print file found if found
+    - name: Call print_message_role if file exists
       when: output_file_flag.stat.exists
       block:
-        - name: Print
-          debug:
-           msg: "File is found"
+        - include_role:
+            name: print_message_role
+          vars:
+            message: "file is found"
