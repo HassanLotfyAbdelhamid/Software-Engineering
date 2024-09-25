@@ -1,0 +1,23 @@
+---
+- name: Run script, check output
+  hosts: localhost
+  tasks:
+    - name: Run the script
+      command: >
+        python3 /mnt/c/Users/ext.hassan.lotfy/PycharmProjects/File\ handling/Task1_xml_edit/app.py
+        /mnt/c/Users/ext.hassan.lotfy/PycharmProjects/File\ handling/Task1_xml_edit/my_xml.xml
+        /mnt/c/Users/ext.hassan.lotfy/PycharmProjects/File\ handling/Task1_xml_edit/input.json
+        /mnt/c/Users/ext.hassan.lotfy/PycharmProjects/File\ handling/Task1_xml_edit/my_rcf.rcf
+
+    - name: Save output file data
+      stat:
+        path: "/mnt/c/Users/ext.hassan.lotfy/PycharmProjects/File handling/Task1_xml_edit/my_rcf.rcf"
+      register: output_file_flag
+
+    - name: Call print_message_role if file exists
+      when: output_file_flag.stat.exists
+      block:
+        - include_role:
+            name: print_message_role
+          vars:
+            message: "file is found"
